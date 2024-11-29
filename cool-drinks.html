@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Drinks - GrocyFlow</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="theme.css">
+   <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    
+
+h1,
+h2,
+h4 {
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #222;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 12000px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+
+body {
+margin: 0;
+padding: 0;
+}
+
+
+header {
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+padding: 10px 20px; 
+
+background: linear-gradient(45deg, #32cd32, #228b22);
+color: white;
+margin: 0; 
+box-sizing: border-box; 
+}
+
+.shop-name {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+  animation: fadeIn 1s ease-out; 
+}
+
+
+.shop-name:hover {
+  color: #080808; 
+  animation: bounce 0.6s ease-out; 
+}
+
+
+.shop-name::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #32cd32, #101010);
+  transition: width 0.4s ease;
+}
+
+.shop-name:hover::after {
+  width: 100%; 
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+.hamburger-menu {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 30px;
+height: 25px;
+cursor: pointer;
+z-index: 10;
+}
+
+.hamburger-menu span {
+display: block;
+height: 4px;
+background-color: white;
+border-radius: 4px;
+transition: all 0.3s ease;
+}
+.navbar {
+    justify-content: space-around; 
+    align-items: center;
+    background-color: transparent!important; 
+}
+
+
+.navbar {
+display: none;
+position: absolute;
+top: 60px;
+right: 20px;
+font-size: larger;
+width: 200px;
+padding: 10px;
+border-radius: 8px;
+z-index: 9;
+flex-direction: column;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .navbar{
+  background: linear-gradient(to right, #484848, #696969);
+}
+.navbar.show {
+display: flex;
+}
+
+
+.nav-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.nav-list li {
+margin: 10px 0;
+}
+
+.nav-list li a {
+text-decoration: none;
+color: white;
+font-weight: bold;
+display: block;
+padding: 10px;
+position: relative;
+transition: color 0.3s ease;
+}
+
+
+.nav-list li a:hover {
+color: rgb(4, 4, 4);
+animation: glowEffect 0.8s infinite alternate;
+}
+
+.nav-list li a::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+height: 3px;
+background-color: rgb(171, 205, 171);
+transition: width 0.3s ease;
+}
+
+body.drak-theme .nav-list li a::after{
+background: linear-gradient(to right, #484848, #696969);
+}
+
+.nav-list li a:hover::after {
+width: 100%;
+}
+
+
+.hamburger-menu.open span:nth-child(1) {
+transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 768px) {
+.navbar {
+background: linear-gradient(45deg, #32cd32, #228b22); 
+}
+
+.navbar.show {
+background: linear-gradient(45deg, #32cd32, #228b22);
+}
+}
+
+
+@media screen and (min-width: 769px) {
+.navbar {
+display: flex; 
+position: static; 
+width: auto;
+background: none; 
+padding: 0;
+box-shadow: none; 
+border-radius: 0; 
+}
+
+.nav-list {
+display: flex; 
+}
+
+.nav-list li {
+margin: 0 15px; 
+}
+
+.hamburger-menu {
+display: none; 
+}
+}
+
+
+
+#theme-toggle-btn {
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  border: none; 
+  background-color: #4caf50; 
+  color: white; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+
+#theme-toggle-btn:hover {
+  background-color: #388e3c; 
+}
+
+
+#theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; 
+  color: inherit; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px; 
+  line-height: 1; 
+  background-color: transparent!important;
+}
+
+#theme-icon {
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 16px; 
+}
+
+@media screen and (max-width: 768px) {
+.hamburger-menu {
+display: flex; 
+}
+
+.navbar {
+display: none; 
+}
+
+.navbar.show {
+display: flex; 
+}
+
+.nav-list {
+flex-direction: column; 
+align-items: center; 
+}
+}
+
+body {
+  background-color: #aaf1aa; 
+  margin: 0; 
+  padding: 0; 
+  height: 100vh; 
+  position: relative; 
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-name">
+      <a href="#" class="shop-name">GrocyFlow</a>
+  </div>
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="aboutUs.html">AboutUs</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><button id="theme-toggle-btn">
+              <i id="theme-icon" class="fa"></i>
+            </button>
+            </li>
+        </ul>  
+    </nav>
+  </header>
+
+    <div class="container">
+        <h1>Explore Cool Drinks</h1>
+        <div class="cool-drinks">
+            <!-- Drink 1 -->
+            <div class="cool-drink-card">
+                <img src="assets/coc.jpeg" alt="Coca Cola" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Coca Cola</h3>
+                    <p class="price">$1.00/500ml</p>
+                </div>
+            </div>
+            <!-- Drink 2 -->
+            <div class="cool-drink-card">
+                <img src="assets/pepsi.png" alt="Pepsi" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Pepsi</h3>
+                    <p class="price">$1.00/500ml</p>
+                </div>
+            </div>
+            <!-- Drink 3 -->
+            <div class="cool-drink-card">
+                <img src="assets/sprite.jpeg" alt="Sprite" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Sprite</h3>
+                    <p class="price">$1.00/500ml</p>
+                </div>
+            </div>
+            <!-- Drink 4 -->
+            <div class="cool-drink-card">
+                <img src="assets/fanta.jpg" alt="Fanta" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Fanta</h3>
+                    <p class="price">$1.00/500ml</p>
+                </div>
+            </div>
+            <!-- Drink 5 -->
+            <div class="cool-drink-card">
+                <img src="assets/mountain-dew.jpg" alt="Mountain Dew" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Mountain Dew</h3>
+                    <p class="price">$1.00/500ml</p>
+                </div>
+            </div>
+            <!-- Drink 6 -->
+            <div class="cool-drink-card">
+                <img src="assets/7up.jpg" alt="7Up" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>7Up</h3>
+                    <p class="price">$1.00/500ml</p>
+                </div>
+            </div>
+            <!-- Drink 7 -->
+            <div class="cool-drink-card">
+                <img src="assets/red-bull.png" alt="Red Bull" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Red Bull</h3>
+                    <p class="price">$2.50/250ml</p>
+                </div>
+            </div>
+            <!-- Drink 8 -->
+            <div class="cool-drink-card">
+                <img src="assets/maaza.jpeg" alt="Maaza" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Maaza</h3>
+                    <p class="price">$1.20/600ml</p>
+                </div>
+            </div>
+            <!-- Drink 9 -->
+            <div class="cool-drink-card">
+                <img src="assets/slice.jpeg" alt="Slice" class="cool-drink-image">
+                <div class="cool-drink-details">
+                    <h3>Slice</h3>
+                    <p class="price">$1.20/600ml</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

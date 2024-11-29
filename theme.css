@@ -1,0 +1,54 @@
+
+body {
+  background-color: #bff1c1; 
+  color: black; 
+}
+
+header {
+  background: linear-gradient(45deg, #32cd32, #228b22); 
+  color: white; 
+}
+
+footer {
+  background: linear-gradient(45deg, #32cd32, #228b22); 
+  color: white; 
+}
+
+button {
+  background: linear-gradient(45deg, #32cd32, #228b22); 
+  color: white; 
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #228b22, #32cd32); 
+}
+
+
+body.dark-theme {
+  background-color: #202020; 
+  color: white; 
+}
+
+body.dark-theme header {
+  background: linear-gradient(to bottom, #484848, #696969);
+  color: #fff;
+}
+
+body.dark-theme footer {
+  background: linear-gradient(to bottom, #2c2c2c, #696969);
+  color: #fff; 
+}
+
+body.dark-theme button {
+  background: linear-gradient(to bottom, #484848, #3d3d3d); 
+  color: white; 
+}
+
+body.dark-theme button:hover {
+  background: linear-gradient(to right, #484848, #696969);
+}
+

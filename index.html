@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrocyFlow - Smart Grocery Shopping</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="theme.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+ 
+</head>
+<body >
+  
+  <div class="app-container">   
+    <header>
+      <div class="logo-name">
+        <a href="#" class="shop-name">GrocyFlow</a>
+    </div>
+      
+      <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div> 
+      <nav class="navbar" id="navbar">
+          <ul class="nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="aboutUs.html">AboutUs</a></li>
+              <li><a href="help.html">Help</a></li>
+              <li><button id="theme-toggle-btn">
+                <i id="theme-icon" class="fas fa-sun"></i> 
+              </button>
+              
+              </li>
+          </ul>  
+      </nav>
+    </header>
+   <br><br>
+
+<section class="hero">
+  <div class="text-content">
+    <h1>Shop Smarter, Live Better</h1>
+    <h2>Welcome to GrocyFlow</h2>
+    <p>Your one-stop online store for fresh produce, pantry essentials, and more-delivered to your doorstep with just a click.</p>
+   
+    <p class="note">No minimum orders. Experience the convenience of smart grocery shopping today!</p>
+  </div>
+
+  <div class="dropdown">
+    <button class="cta" onclick="toggleDropdown()">Start Shopping</button>
+    <div class="dropdown-content" id="dropdown-menu">
+      <a href="vegetables.html">Vegetables</a>
+      <a href="fruits.html">Fruits</a>
+      <a href="dairy.html">Vegetables</a>
+      <a href="Masalas.html">Masalas</a>
+      <a href="oils.html">Oils</a>
+     
+
+    </div>
+  </div>
+
+  <div class="image-content">
+    <img src="assets/finallogo.jpg" alt="Smart Grocery Store">
+  </div>
+</section>
+   
+<br><br>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="assets/Untitled design (1).png" alt="Fresh Vegetables">
+   
+  </div>
+  <div class="mySlides fade">
+    <img src="assets/2.jpg" alt="Fresh Fruits">
+    
+  </div>
+  <div class="mySlides fade">
+    <img src="assets/slide-3.png" alt="Dairy, Bread and Eggs">
+  
+  </div>
+</div>
+  </div>
+    <section class="daily-offers">
+      <h2>Deal Of The Day</h2>
+      <div class="offers-container">
+        <div class="offer-card">
+          <img src="assets/mamaearth.jpeg" alt="Offer 1">
+          <div class="offer-info">
+            <h3>Special Offer On MamaEarth</h3>
+            
+            <button class="offer-btn">Shop Now</button>
+          </div>
+        </div>
+        <div class="offer-card">
+          <img src="assets/oats.jpg" alt="Offer 2">
+          <div class="offer-info">
+            <h3>Buy 1 Get 1 On Groceries</h3>
+            
+            <button class="offer-btn">Shop Now</button>
+          </div>
+        </div>
+        <div class="offer-card">
+          <img src="assets/nescafe.jpg" alt="Offer 3">
+          <div class="offer-info">
+            <h3>Free delivery on orders above $50.</h3>
+           
+            <button class="offer-btn">Shop Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <h2>SHOP BY CATEGORY !!</h2>
+      <div class="grid-container">
+        <a href="vegetables.html" class="category-card" data-category="Fresh Vegetables">
+          <img src="assets/veg.jpg" alt="Fresh Vegetables">
+          <p>Fresh Vegetables</p>
+        </a>
+        <a href="fruits.html" class="category-card" data-category="Fresh Fruits">
+          <img src="assets/fruits.jpeg" alt="Fresh Fruits">
+          <p>Fresh Fruits</p>
+        </a>
+        <a href="dairy.html" class="category-card" data-category="Dairy, Bread and Eggs">
+          <img src="assets/diary.jpeg" alt="Dairy, Bread and Eggs">
+          <p>Dairy, Bread and Eggs</p>
+        </a>
+        <a href="oralCare.html" class="category-card" data-category="Oral Care">
+          <img src="assets/oralcare.jpg" alt="Oral Care">
+          <p>Oral Care</p>
+        </a>
+        <a href="Masalas.html" class="category-card" data-category="Masalas">
+          <img src="assets/MASALA.jpeg" alt="Masalas">
+          <p>Masalas</p>
+        </a>
+        <a href="oils.html" class="category-card" data-category="Oils and Ghee">
+          <img src="assets/oil.jpeg" alt="Oils and Ghee">
+          <p>Oils and Ghee</p>
+        </a>
+        <a href="snacks.html" class="category-card" data-category="Munchies">
+          <img src="assets/snacks.jpeg" alt="Munchies">
+          <p>Munchies</p>
+        </a>
+        <a href="sweet-tooth.html" class="category-card" data-category="Sweet Tooth">
+          <img src="assets/sweet-tooth.jpeg" alt="Sweet Tooth">
+          <p>Sweet Tooth</p>
+        </a>
+        <a href="" class="category-card" data-category="Cold Drinks and Juices">
+          <img src="assets/cool-drinks.jpeg" alt="Cold Drinks and Juices">
+          <p>Cold Drinks and Juices</p>
+        </a>
+        <a href="" class="category-card" data-category="Biscuits and Cakes">
+          <img src="assets/buiscuits.jpeg" alt="Biscuits and Cakes">
+          <p>Biscuits and Cakes</p>
+        </a>
+        <a href="" class="category-card" data-category="Instant and Frozen Food">
+          <img src="assets/frozen.jpeg" alt="Instant and Frozen Food">
+          <p>Instant and Frozen Food</p>
+        </a>
+        <a href="" class="category-card" data-category="Meat and Seafood">
+          <img src="assets/meat.jpeg" alt="Meat and Seafood">
+          <p>Meat and Seafood</p>
+        </a>
+      </div>
+    </section>
+   
+  <section class="top-brands">
+    <h2>Our Most Loved Brands</h2>
+    <div class="brand-carousel">
+      <div class="brand-item">
+        <img src="assets/bru.png" alt="Ashirvad">
+      </div>
+      <div class="brand-item">
+        <img src="assets/rin.jpeg" alt="Rin">
+      </div>
+      <div class="brand-item">
+        <img src="assets/surf.png" alt="Mamaearth">
+      </div>
+      <div class="brand-item">
+        <img src="assets/bnatural.avif" alt="B Natural">
+      </div>
+      <div class="brand-item">
+        <img src="assets/sunfeast.png" alt="Sunfeast">
+      </div>
+      <div class="brand-item">
+        <img src="assets/vivel.png" alt="Vivel">
+      </div>
+      <div class="brand-item">
+        <img src="assets/dabur.png" alt="Dabur">
+    </div>
+    <div class="brand-item">
+        <img src="assets/vaseline.jpeg" alt="Vaseline">
+    </div>
+    
+    </div>
+    <a href="viewAll.html" class="view-all">View All</a>
+  </section>
+  <section class="product-section">
+    <h2>Big packs, bigger savings!</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="discount-badge">12% OFF</div>
+        <img src="assets/tata-salt.jpeg" alt="Tata Salt 1kg" />
+        <div class="product-info">
+          <p class="delivery-time">⏱️ 1hr</p>
+          <h3>Tata Salt 1kg</h3>
+          <p class="price">
+            <span class="original-price">₹28</span>
+            <span class="discounted-price">₹25</span>
+          </p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="discount-badge">18% OFF</div>
+        <img src="assets/stationaries.jpg" alt="Fortune Sunflower Oil 1L" />
+        <div class="product-info">
+          <p class="delivery-time">⏱️ 2hrs</p>
+          <h3>Stationaries</h3>
+          <p class="price">
+            <span class="original-price">₹170</span>
+            <span class="discounted-price">₹139</span>
+          </p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="discount-badge">12% OFF</div>
+        <img src="assets/britania.jpeg" alt="Britannia Good Day Biscuits 1kg" />
+        <div class="product-info">
+          <p class="delivery-time">⏱️ 45 mins</p>
+          <h3>Britannia Good Day Biscuits 1kg</h3>
+          <p class="price">
+            <span class="original-price">₹160</span>
+            <span class="discounted-price">₹141</span>
+          </p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="discount-badge">18% OFF</div>
+        <img src="assets/surf-excel.jpeg" alt="Surf Excel Washing Powder 2kg" />
+        <div class="product-info">
+          <p class="delivery-time">⏱️ 1hr 10mins</p>
+          <h3>Surf Excel Washing Powder 2kg</h3>
+          <p class="price">
+            <span class="original-price">₹420</span>
+            <span class="discounted-price">₹344</span>
+          </p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="discount-badge">8% OFF</div>
+        <img src="assets/gold-winner.jpeg" alt="Gold Winner Oil" />
+        <div class="product-info">
+          <p class="delivery-time">⏱️ 23 mins</p>
+          <h3> Refined Sunflower Oil</h3>
+          <p class="price">
+            <span class="original-price">₹775</span>
+            <span class="discounted-price">₹713</span>
+          </p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="discount-badge">18% OFF</div>
+        <img src="assets/ghee-1l.jpeg" alt="Ghee 1L Jar" />
+        <div class="product-info">
+          <p class="delivery-time">⏱️ 3 mins</p>
+          <h3>Desi Ghee 1L Jar</h3>
+          <p class="price">
+            <span class="original-price">₹560</span>
+            <span class="discounted-price">₹459</span>
+          </p>
+          <button class="add-btn">ADD</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="store-container">
+    <div class="store-header">
+      <h2>Our Newly Launched Products</h2>
+    </div>
+    <div class="product-list">
+      <!-- Product 1 -->
+      <div class="product-card1">
+        <div class="card-header">
+          <h3>Tata Premium Tea</h3>
+        </div>
+        <div class="card-body">
+          <img src="assets/tata-tea.webp" alt="Tata Premium Tea" class="product-image">
+          <p class="product-description">Experience the rich taste and aroma of India's favorite tea.</p>
+          <p class="price">Rs.100</p>
+        </div>
+        <div class="card-footer">
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card1">
+        <div class="card-header">
+          <h3>Floor Cleaner</h3>
+        </div>
+        <div class="card-body">
+          <img src="assets/floor-cleaner.webp" alt="Floor Cleaner" class="product-image">
+          <p class="product-description">A powerful solution for sparkling clean and germ-free floors.</p>
+          <p class="price">Rs.120</p>
+        </div>
+        <div class="card-footer">
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card1">
+        <div class="card-header">
+          <h3>Face Gel</h3>
+        </div>
+        <div class="card-body">
+          <img src="assets/face-gel.webp" alt="Face Gel" class="product-image">
+          <p class="product-description">Hydrate and rejuvenate your skin with our soothing face gel.</p>
+          <p class="price">Rs.80</p>
+        </div>
+        <div class="card-footer">
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Product 4 -->
+      <div class="product-card1">
+        <div class="card-header">
+          <h3>Herbal Hair Oil</h3>
+        </div>
+        <div class="card-body">
+          <img src="assets/hair-oil.webp" alt="Herbal Hair Oil" class="product-image">
+          <p class="product-description">Strengthen and nourish your hair with our premium herbal oil.</p>
+          <p class="price">Rs.150</p>
+        </div>
+        <div class="card-footer">
+          <button class="add-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <h1>Satisfy Your Cravings!</h1>
+
+  <section class="cravings-grid">
+    <article class="cravings-item">
+      <h2>Sip Non-Stop</h2>
+      <img src="assets/juice.avif" alt="Juice">
+    </article>
+    <article class="cravings-item">
+      <h2>When Cravings Hit</h2>
+      <img src="assets/snak.jpg" alt="Snacks">
+    </article>
+    <article class="cravings-item">
+      <h2>Unwrap Sweetness</h2>
+      <img src="assets/chokii.avif" alt="Chocolate">
+    </article>
+    <article class="cravings-item">
+      <h2>Your Quick Snack</h2>
+      <img src="assets/noodles.avif" alt="Noodles">
+    </article>
+    <article class="cravings-item">
+      <h2>Fulfilling Bites</h2>
+      <img src="assets/chips.avif" alt="Chips">
+    </article>
+    <article class="cravings-item">
+      <h2>Flavourful Starters</h2>
+      <img src="assets/jam.jpg" alt="Starters">
+    </article>
+  
+    <!-- Background Animation Overlay -->
+    <div class="background-animation">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+    </div>
+  </section>
+  
+  
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Logo and About Section -->
+      <div class="footer-about">
+        <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+        <p>
+          Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+          Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+        </p>
+      </div>
+  
+      <!-- Quick Links Section -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+          <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact Section -->
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+<script> 
+ 
+ // Wait for the DOM to fully load
+ document.addEventListener("DOMContentLoaded", () => {
+        const categoryCards = document.querySelectorAll(".category-card");
+    
+        categoryCards.forEach((card) => {
+          card.addEventListener("click", (event) => {
+            // Ensure the category is fetched properly
+            const categoryName = card.getAttribute("data-category"); 
+    
+            if (categoryName) {
+              announceCategory(categoryName); // Announce the category
+            } else {
+              console.error("Category name not found for:", card);
+            }
+          });
+        });
+    
+        // Function to announce the category using Speech Synthesis API
+        function announceCategory(category) {
+          if ("speechSynthesis" in window) {
+            const speech = new SpeechSynthesisUtterance(`You selected ${category}`);
+            speech.rate = 1; // Normal speech rate
+            speech.pitch = 1; // Normal pitch
+            window.speechSynthesis.speak(speech);
+          } else {
+            console.log("Speech Synthesis is not supported in this browser.");
+          }
+        }
+      });
+
+
+
+
+      // Theme Toggle Functionality
+const themeToggleBtn = document.getElementById("theme-toggle-btn");
+const themeIcon = document.getElementById("theme-icon");
+
+themeToggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    if (document.body.classList.contains("dark-theme")) {
+        themeIcon.classList.remove("fa-sun");
+        themeIcon.classList.add("fa-moon");
+    } else {
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+    }
+});
+
+// Hamburger Menu Toggle
+const hamburgerMenu = document.getElementById("hamburger-menu");
+const navbar = document.getElementById("navbar");
+
+function toggleNavbar() {
+    navbar.classList.toggle("active");
+}
+
+// Slideshow Functionality
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+// Search Bar Autocomplete
+const searchInput = document.getElementById("search-input");
+const suggestionsList = document.getElementById("suggestions");
+
+const items = [
+    "Fresh Vegetables", "Fresh Fruits", "Dairy, Bread and Eggs", "Oral Care", "Masalas", 
+    "Oils and Ghee", "Munchies", "Sweet Tooth", "Cold Drinks and Juices", 
+    "Biscuits and Cakes", "Instant and Frozen Food", "Meat and Seafood"
+];
+
+searchInput.addEventListener("input", () => {
+    const inputValue = searchInput.value.toLowerCase();
+    const filteredItems = items.filter(item => item.toLowerCase().includes(inputValue));
+    
+    suggestionsList.innerHTML = ""; // Clear existing suggestions
+    
+    if (inputValue) {
+        filteredItems.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item;
+            suggestionsList.appendChild(listItem);
+        });
+    }
+});
+
+// Adding an event listener for suggestion clicks
+suggestionsList.addEventListener("click", (event) => {
+    if (event.target && event.target.nodeName === "LI") {
+        searchInput.value = event.target.textContent;
+        suggestionsList.innerHTML = ""; // Clear suggestions
+    }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".footer-logo");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in-logo"); // Add class on scroll
+          observer.unobserve(entry.target); // Stop observing once animated
+        }
+      });
+    },
+    { threshold: 0.1 } // Trigger when 10% of the element is visible
+  );
+
+  observer.observe(logo);
+});
+
+</script>
+
+<script>
+  function toggleNavbar() {
+  const navbar = document.getElementById("navbar");
+  navbar.classList.toggle("open"); 
+}
+
+</script>
+
+</body>
+
+</html>

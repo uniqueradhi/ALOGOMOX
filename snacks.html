@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrocyFlow</title>
+  <link rel="stylesheet" href="snacks.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+</head>
+
+<body>
+  <header>
+    <div class="logo-name">
+      <a href="#" class="shop-name">GrocyFlow</a>
+  </div>
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="aboutUs.html">AboutUs</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><button id="theme-toggle-btn">
+              <i id="theme-icon" class="fa"></i>
+            </button>
+            </li>
+        </ul>  
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Explore Fresh Snacks</h1>
+    <div class="snack-grid">
+      
+      <div class="snack-card" data-id="1" data-name="Potato Chips" data-price="50">
+        <img src="assets/potato_chips.jpg" alt="Potato Chips" class="snack-image">
+        <div class="snack-details">
+          <h3>Potato Chips</h3>
+          <p class="price">₹50/pack</p>
+          <p class="total-price">Total: ₹<span class="total-amount">50</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="2" data-name="Nachos" data-price="80">
+        <img src="assets/nachos.jpg" alt="Nachos" class="snack-image">
+        <div class="snack-details">
+          <h3>Nachos</h3>
+          <p class="price">₹80/pack</p>
+          <p class="total-price">Total: ₹<span class="total-amount">80</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="3" data-name="Cookies" data-price="120">
+        <img src="assets/cookies.jpg" alt="Cookies" class="snack-image">
+        <div class="snack-details">
+          <h3>Cookies</h3>
+          <p class="price">₹120/box</p>
+          <p class="total-price">Total: ₹<span class="total-amount">120</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="4" data-name="Popcorn" data-price="70">
+        <img src="assets/popcorn.avif" alt="Popcorn" class="snack-image">
+        <div class="snack-details">
+          <h3>Popcorn</h3>
+          <p class="price">₹70/pack</p>
+          <p class="total-price">Total: ₹<span class="total-amount">70</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="5" data-name="Chocolate Bar" data-price="60">
+        <img src="assets/chocolate-bar.jpg" alt="Chocolate Bar" class="snack-image">
+        <div class="snack-details">
+          <h3>Chocolate Bar</h3>
+          <p class="price">₹60/each</p>
+          <p class="total-price">Total: ₹<span class="total-amount">60</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="6" data-name="Energy Bar" data-price="40">
+        <img src="assets/energy-bar.jpg" alt="Energy Bar" class="snack-image">
+        <div class="snack-details">
+          <h3>Energy Bar</h3>
+          <p class="price">₹40/each</p>
+          <p class="total-price">Total: ₹<span class="total-amount">40</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="7" data-name="Banana Chips" data-price="90">
+        <img src="assets/banana-chips.jpg" alt="Banana Chips" class="snack-image">
+        <div class="snack-details">
+          <h3>Banana Chips</h3>
+          <p class="price">₹90/pack</p>
+          <p class="total-price">Total: ₹<span class="total-amount">90</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="8" data-name="Trail Mix" data-price="150">
+        <img src="assets/trail-mix.jpg" alt="Trail Mix" class="snack-image">
+        <div class="snack-details">
+          <h3>Trail Mix</h3>
+          <p class="price">₹150/pack</p>
+          <p class="total-price">Total: ₹<span class="total-amount">150</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="9" data-name="Muffin" data-price="40">
+        <img src="assets/muffin.jpg" alt="Muffin" class="snack-image">
+        <div class="snack-details">
+          <h3>Muffin</h3>
+          <p class="price">₹40/each</p>
+          <p class="total-price">Total: ₹<span class="total-amount">40</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="10" data-name="Granola" data-price="120">
+        <img src="assets/garnola.jpg" alt="Granola" class="snack-image">
+        <div class="snack-details">
+          <h3>Granola</h3>
+          <p class="price">₹120/pack</p>
+          <p class="total-price">Total: ₹<span class="total-amount">120</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="11" data-name="Crackers" data-price="50">
+        <img src="assets/crackers.jpg" alt="Crackers" class="snack-image">
+        <div class="snack-details">
+          <h3>Crackers</h3>
+          <p class="price">₹50/pack</p>
+          <p class="total-price">Total: ₹<span class="total-amount">50</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="snack-card" data-id="12" data-name="Fruit Bars" data-price="90">
+        <img src="assets/fruit-bar.avif" alt="Fruit Bars" class="snack-image">
+        <div class="snack-details">
+          <h3>Fruit Bars</h3>
+          <p class="price">₹90/box</p>
+          <p class="total-price">Total: ₹<span class="total-amount">90</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   
+ 
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-about">
+        <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+        <p>
+          Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+          Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+        </p>
+      </div>
+  
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+          <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+      </div>
+  
+      
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+ <script src="dairy.js"></script>
+ <script src="nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <style>
+h1,
+h2,
+h4 {
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #222;
+}
+body.dark-theme h1{
+  color:white;
+}
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 12000px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+/* Remove default margins and paddings for the body */
+body {
+margin: 0;
+padding: 0;
+}
+
+/* Header styles */
+header {
+display: flex;
+justify-content: space-between; /* Space between logo and navbar */
+align-items: center; /* Vertically align items */
+padding: 10px 20px; /* Adjust padding to reduce header size */
+background: linear-gradient(45deg, #32cd32, #228b22);
+color: white;
+margin: 0; /* Ensure no extra space around the header */
+box-sizing: border-box; /* Include padding in total width/height */
+}
+/* Logo and shop name */
+.logo-name {
+display: flex;
+align-items: center;
+}
+
+.logo {
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+
+.shop-name {
+text-decoration: none;
+color: white;
+font-size: 1.5rem;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 30px;
+height: 25px;
+cursor: pointer;
+z-index: 10;
+}
+
+.hamburger-menu span {
+display: block;
+height: 4px;
+background-color: white;
+border-radius: 4px;
+transition: all 0.3s ease;
+}
+/* Navbar */
+.navbar {
+display: none;
+position: absolute;
+top: 60px;
+right: 20px;
+font-size: larger;
+background: linear-gradient(to bottom, rgba(72, 206, 137, 0.867), #56ce56); /* Mobile-specific color */
+width: 200px;
+padding: 10px;
+border-radius: 8px;
+z-index: 9;
+flex-direction: column;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .navbar{
+  background: linear-gradient(to right, #484848, #696969);
+}
+.navbar.show {
+display: flex;
+}
+
+/* Navbar links */
+.nav-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.nav-list li {
+margin: 10px 0;
+}
+
+.nav-list li a {
+text-decoration: none;
+color: white;
+font-weight: bold;
+display: block;
+padding: 10px;
+position: relative;
+transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-list li a:hover {
+color: rgb(4, 4, 4);
+animation: glowEffect 0.8s infinite alternate;
+}
+
+@keyframes glowEffect {
+from {
+text-shadow: 0 0 5px rgba(253, 255, 253, 0.5), 0 0 15px rgba(171, 205, 171, 0.4);
+}
+to {
+text-shadow: 0 0 15px rgba(171, 205, 171, 0.8), 0 0 25px rgba(171, 205, 171, 0.7);
+}
+}
+
+.nav-list li a::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+height: 3px;
+background-color: rgb(171, 205, 171);
+transition: width 0.3s ease;
+}
+
+body.drak-theme .nav-list li a::after{
+background: linear-gradient(to right, #484848, #696969);
+}
+
+.nav-list li a:hover::after {
+width: 100%;
+}
+
+/* Hamburger to X animation */
+.hamburger-menu.open span:nth-child(1) {
+transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+transform: rotate(-45deg) translate(5px, -5px);
+}
+/* Mobile view (screen width <= 768px) */
+@media screen and (max-width: 768px) {
+.navbar {
+background: linear-gradient(45deg, #32cd32, #228b22); /* Mobile-specific color */
+}
+
+.navbar.show {
+background: linear-gradient(45deg, #32cd32, #228b22);/* When hamburger is open */
+}
+}
+
+/* Show the navbar horizontally on desktop (screen width > 768px) */
+@media screen and (min-width: 769px) {
+.navbar {
+display: flex; /* Make the navbar visible on desktop */
+position: static; /* Change positioning to static so it doesn't overlap */
+width: auto;
+background: none; /* Remove background for desktop view */
+padding: 0;
+box-shadow: none; /* Remove shadow for desktop */
+border-radius: 0; /* Remove border-radius for desktop */
+}
+
+.nav-list {
+display: flex; /* Display nav items horizontally */
+}
+
+.nav-list li {
+margin: 0 15px; /* Horizontal spacing for desktop */
+}
+
+.hamburger-menu {
+display: none; /* Hide hamburger menu on desktop */
+}
+}
+
+/* Mobile view (screen width <= 768px) */
+@media screen and (max-width: 768px) {
+.hamburger-menu {
+display: flex; /* Show hamburger on mobile */
+}
+
+.navbar {
+display: none; /* Hide navbar by default */
+}
+
+.navbar.show {
+display: flex; /* Show navbar when clicked */
+}
+
+.nav-list {
+flex-direction: column; /* Stack nav items vertically */
+align-items: center; /* Center items */
+}
+}
+
+body {
+  background-color: #bff1c1 ; /* Set the background color to light green */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100vh; /* Make sure the body takes the full viewport height */
+}
+
+
+
+    /* Input Field */
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Placeholder Color */
+input[type="text"]::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Input Focus Styles */
+input[type="text"]:focus {
+  border-color: rgb(67, 160, 71); /* A nice green border color */
+  box-shadow: 0 0 8px 2px rgba(17, 153, 24, 0.5), 
+              0 0 10px rgba(67, 160, 71, 0.8);
+  background: linear-gradient(90deg, rgba(200, 255, 200, 0.2), rgba(200, 255, 200, 0.1));
+}
+
+/* Base Styles for Category Cards */
+.category-card {
+  background: linear-gradient(145deg, #f5f5f5, #dcdcdc); /* Subtle 3D-like gradient */
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 200px; /* Ensures a max size for the card */
+  margin: 8px auto; /* Center horizontally */
+  box-sizing: border-box; /* Includes padding and border in width */
+}
+
+/* Hover Effects */
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, #a1eaa3, #65ba86);
+}
+  
+body.dark-theme .category-card{
+  background: linear-gradient(to bottom,#C5C5C5, #696969);
+  
+}
+
+
+/* Glow Ring on Hover */
+.category-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 5px;
+  background: linear-gradient(45deg, #32cd32, #228b22);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+body.dark-theme .category-card::before{
+  background: linear-gradient(to bottom,#1e1d1d, #2b2b2b);
+  
+}
+.category-card:hover::before {
+  opacity: 1;
+}
+
+/* Card Image */
+.category-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 4px solid rgba(236, 243, 237, 0.3);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.category-card:hover img {
+  transform: rotate(10deg) scale(1.1);
+  border-color: linear-gradient(45deg, #32cd32, #228b22);
+}
+
+body.dark-theme .category-card:hover img{
+  border-color: linear-gradient(to bottom,#C5C5C5, #696969);
+}
+
+#categories h2 {
+  font-size: 2.5rem;
+  color: black;
+  text-align: center;
+  animation: bounceIn 1.5s ease-out forwards;
+}
+
+body.dark-theme #categories h2{
+  color:white;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body.dark-theme .h1{
+  color:white;
+}
+/* Toggle Button */
+#theme-toggle-btn {
+  border-radius: 20px; /* Adds rounded corners */
+  padding: 10px 20px; /* Adds padding for a better appearance */
+  border: none; /* Removes the default border */
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text for better contrast */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s ease; /* Adds a smooth hover effect */
+}
+
+/* Hover Effect */
+#theme-toggle-btn:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+
+/* About Us Container */
+.about-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* About Header */
+.about-header h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-header p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Image Section */
+.image-container {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Section */
+.text-section {
+    flex: 1;
+    max-width: 45%;
+    color: #333;
+    text-align: left;
+}
+
+.text-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.text-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.text-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.text-section ul li {
+    font-size: 1.1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container, .text-section {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .about-header h1 {
+        font-size: 2.5em;
+    }
+
+    .about-header p {
+        font-size: 1.1em;
+    }
+}
+
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="logo-name">
+      <img src="assets/logo.jpeg" alt="GrocyFlow Logo" class="logo">
+      <a href="#" class="shop-name">GrocyFlow</a>
+    </div>
+    
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  
+    <nav class="navbar" id="navbar">
+      <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="aboutUS.html">AboutUs</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><button id="theme-toggle-btn" class="toggle-btn">Toggle Theme</button></li>
+          </ul>  
+        </nav>
+      </header>
+
+
+      <div class="about-container">
+        <div class="about-header">
+            <h1>About Us</h1>
+            <p>Welcome to Smart Grocery, your one-stop online store for fresh groceries, delivered right to your doorstep!</p>
+        </div>
+
+        <div class="about-section">
+            <div class="image-container">
+                <img src="assets/finallogo.jpg" alt="Our Team" class="about-image">
+            </div>
+            <div class="text-section">
+                <h2>Our Mission</h2>
+                <p>At Smart Grocery, our mission is to provide high-quality, fresh groceries to customers in the most convenient way possible. With a user-friendly platform and fast delivery, we aim to make grocery shopping effortless and efficient.</p>
+
+                <h2>Our Values</h2>
+                <ul>
+                    <li>Convenience</li>
+                    <li>Quality Products</li>
+                    <li>Customer Satisfaction</li>
+                    <li>Innovation</li>
+                    <li>Speedy Delivery</li>
+                </ul>
+
+                <h2>Meet the Team</h2>
+                <p>Our dedicated team works around the clock to ensure the best shopping experience. From sourcing fresh produce to delivering orders on time, we strive to meet your grocery needs with ease and efficiency.</p>
+            </div>
+        </div>
+    </div>
+
+<script>
+    
+
+function toggleTheme() {
+  const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+  if (currentTheme === 'light') {
+    document.body.classList.remove('light-theme');
+    document.body.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    document.body.classList.remove('dark-theme');
+    document.body.classList.add('light-theme');
+    localStorage.setItem('theme', 'light'); 
+  }
+}
+
+window.onload = function() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.body.classList.add(savedTheme + '-theme');
+  } else {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (userPrefersDark) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.add('light-theme');
+    }
+  }
+}
+
+document.getElementById('theme-toggle-btn').addEventListener('click', toggleTheme);
+
+  </script>
+  <script src="nav.js"></script>
+  
+</body>
+</html>
+
+

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Grocery Shopping</title>
+  <link rel="stylesheet" href="lists.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+  <style>
+   
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(assets/bg\ \(2\).jpeg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: rgba(255, 255, 255, 0.5); 
+    height: 100vh; 
+    background-attachment: fixed; 
+}
+
+
+.top-brands {
+    padding: 20px;
+    text-align: center;
+}
+
+
+.top-brands h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.brand-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.brand-carousel {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 20px; 
+    justify-items: center; 
+    margin-bottom: 20px;
+}
+.brand-item {
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+.brand-item img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.3s ease; 
+}
+
+
+.brand-item:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+
+.brand-item:hover img {
+  transform: scale(1.1); 
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #07df07, #37b337)!important;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-all:hover {
+  background-color: #67ea7b;
+  transform: scale(1.1); 
+  box-shadow: 16px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #13dbb9;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative;
+  letter-spacing: 4px;
+  padding: 10px;
+  display: inline-block;
+  background: linear-gradient(90deg, #92eba4, #81c784); 
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
+}
+
+
+h2 {
+  animation: bounceIn 1s ease-out forwards;
+}
+
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+h2:hover {
+  background-position: 0 0;
+}
+
+
+h1,
+h2,
+h4 {
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #222;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 12000px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+
+body {
+margin: 0;
+padding: 0;
+}
+
+
+header {
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+padding: 10px 20px; 
+
+background: linear-gradient(45deg, #32cd32, #228b22);
+color: white;
+margin: 0; 
+box-sizing: border-box; 
+}
+
+.shop-name {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+  animation: fadeIn 1s ease-out; 
+}
+
+
+.shop-name:hover {
+  color: #080808; 
+  animation: bounce 0.6s ease-out; 
+}
+
+
+.shop-name::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #32cd32, #101010);
+  transition: width 0.4s ease;
+}
+
+.shop-name:hover::after {
+  width: 100%; 
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+.hamburger-menu {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 30px;
+height: 25px;
+cursor: pointer;
+z-index: 10;
+}
+
+.hamburger-menu span {
+display: block;
+height: 4px;
+background-color: white;
+border-radius: 4px;
+transition: all 0.3s ease;
+}
+.navbar {
+    justify-content: space-around; 
+    align-items: center;
+    background-color: transparent!important; 
+}
+
+
+.navbar {
+display: none;
+position: absolute;
+top: 60px;
+right: 20px;
+font-size: larger;
+width: 200px;
+padding: 10px;
+border-radius: 8px;
+z-index: 9;
+flex-direction: column;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .navbar{
+  background: linear-gradient(to right, #484848, #696969);
+}
+.navbar.show {
+display: flex;
+}
+
+
+.nav-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.nav-list li {
+margin: 10px 0;
+}
+
+.nav-list li a {
+text-decoration: none;
+color: white;
+font-weight: bold;
+display: block;
+padding: 10px;
+position: relative;
+transition: color 0.3s ease;
+}
+
+
+.nav-list li a:hover {
+color: rgb(4, 4, 4);
+animation: glowEffect 0.8s infinite alternate;
+}
+
+.nav-list li a::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+height: 3px;
+background-color: rgb(171, 205, 171);
+transition: width 0.3s ease;
+}
+
+body.drak-theme .nav-list li a::after{
+background: linear-gradient(to right, #484848, #696969);
+}
+
+.nav-list li a:hover::after {
+width: 100%;
+}
+
+
+.hamburger-menu.open span:nth-child(1) {
+transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 768px) {
+.navbar {
+background: linear-gradient(45deg, #32cd32, #228b22); 
+}
+
+.navbar.show {
+background: linear-gradient(45deg, #32cd32, #228b22);
+}
+}
+
+@media screen and (min-width: 769px) {
+.navbar {
+display: flex; 
+position: static; 
+width: auto;
+background: none; 
+padding: 0;
+box-shadow: none; 
+border-radius: 0; 
+}
+
+.nav-list {
+display: flex; 
+}
+
+.nav-list li {
+margin: 0 15px; 
+}
+
+.hamburger-menu {
+display: none; 
+}
+}
+
+
+@media screen and (max-width: 768px) {
+.hamburger-menu {
+display: flex; 
+}
+
+.navbar {
+display: none; 
+}
+
+.navbar.show {
+display: flex; 
+}
+
+.nav-list {
+flex-direction: column; 
+align-items: center; 
+}
+}
+
+body {
+  background-color: #aaf1aa; 
+  margin: 0; 
+  padding: 0; 
+  height: 100vh; 
+  position: relative; 
+}
+
+
+
+
+.custom-footer {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background-color: #529656;
+  text-align: center;
+ padding: 30px 20px;
+  overflow: hidden;
+}
+
+body.dark-theme .custom-footer{
+  background: linear-gradient(to right, #505050, #a0a0a0); 
+  
+}
+
+.footer-top {
+  background: linear-gradient(135deg,#00A300, #8ade8d);
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme{
+  color: #383737;
+}
+body.dark-theme .footer-top{
+  background: linear-gradient(to bottom, #4e4c4c, #C5C5C5);
+ 
+}
+.cta-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.cta-section p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 0;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.footer-column h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #f4f3f0;
+}
+body.dark-theme .footer-column h4{
+  color:black;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #5cd55e;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #19e884;
+  transform: scale(1.2);
+}
+
+.footer-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #010a01;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-btn:hover {
+  background-color: #870a0a79;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+  }
+
+  .footer-column {
+      text-align: center;
+  }
+}
+
+.store-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box; 
+}
+
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.store-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.store-header .view-all {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.store-header .view-all:hover {
+  text-decoration: underline;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo-name">
+        <a href="#" class="shop-name">GrocyFlow</a>
+    </div>
+      <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <nav class="navbar" id="navbar">
+          <ul class="nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="aboutUs.html">AboutUs</a></li>
+              <li><a href="help.html">Help</a></li>
+              <li><button id="theme-toggle-btn">
+                <i id="theme-icon" class="fa"></i>
+              </button>
+              </li>
+          </ul>  
+      </nav>
+    </header>
+    
+
+    <section class="top-brands">
+        <h2>Our Most Loved Brands</h2>
+        <div class="brand-carousel">
+            <div class="brand-item">
+                <img src="assets/bru.png" alt="Ashirvad">
+            </div>
+            <div class="brand-item">
+                <img src="assets/rin.jpeg" alt="Rin">
+            </div>
+            <div class="brand-item">
+                <img src="assets/surf.png" alt="Mamaearth">
+            </div>
+            <div class="brand-item">
+                <img src="assets/bnatural.avif" alt="B Natural">
+            </div>
+            <div class="brand-item">
+                <img src="assets/sunfeast.png" alt="Sunfeast">
+            </div>
+            <div class="brand-item">
+                <img src="assets/vivel.png" alt="Vivel">
+            </div>
+            <div class="brand-item">
+                <img src="assets/dove.jpg" alt="Dove">
+            </div>
+            <div class="brand-item">
+                <img src="assets/lux.jpeg" alt="Lux">
+            </div>
+            <div class="brand-item">
+                <img src="assets/colgate.png" alt="Colgate">
+            </div>
+            <div class="brand-item">
+                <img src="assets/pepsodent.jpg" alt="Pepsodent">
+            </div>
+            <div class="brand-item">
+                <img src="assets/himalaya.png" alt="Himalaya">
+            </div>
+            <div class="brand-item">
+                <img src="assets/patanjali.png" alt="Patanjali">
+            </div>
+            <div class="brand-item">
+                <img src="assets/amul.jpg" alt="Amul">
+            </div>
+            <div class="brand-item">
+                <img src="assets/nivea.png" alt="Nivea">
+            </div>
+            <div class="brand-item">
+                <img src="assets/granier.jpg" alt="Garnier">
+            </div>
+            <div class="brand-item">
+                <img src="assets/pomolive.png" alt="Palmolive">
+            </div>
+            <div class="brand-item">
+                <img src="assets/olay.jpg" alt="Olay">
+            </div>
+            <div class="brand-item">
+                <img src="assets/ponds.webp" alt="Ponds">
+            </div>
+            <div class="brand-item">
+                <img src="assets/dettol.jpg" alt="Dettol">
+            </div>
+            <div class="brand-item">
+                <img src="assets/johnson.png" alt="Johnson's Baby">
+            </div>
+            <div class="brand-item">
+                <img src="assets/axe.png" alt="Axe">
+            </div>
+            <div class="brand-item">
+                <img src="assets/loreal.png" alt="L'Oreal">
+            </div>
+            <div class="brand-item">
+                <img src="assets/dabur.png" alt="Dabur">
+            </div>
+            <div class="brand-item">
+                <img src="assets/vaseline.jpeg" alt="Vaseline">
+            </div>
+        </div>
+        <a href="index.html" class="view-all"><-</a>
+    </section>
+    
+ 
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+          <p>
+            Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+            Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+            <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+            <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <script src="script.js">
+  </script>
+  <script src="nav.js"></script>
+</body>
+
+</html>

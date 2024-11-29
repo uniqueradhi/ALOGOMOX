@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Vegetables - GrocyFlow</title>
+  <link rel="stylesheet" href="dairy.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+</head>
+<body>
+  
+    <header>
+        <div class="logo-name">
+          <a href="#" class="shop-name">GrocyFlow</a>
+      </div>
+        <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lists.html">Lists</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="aboutUs.html">AboutUs</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><button id="theme-toggle-btn">
+                  <i id="theme-icon" class="fa"></i>
+                </button>
+                </li>
+            </ul>  
+        </nav>
+      </header>
+  <div class="container">
+    <h1>Explore Dairy Products</h1>
+    <div class="dairy-grid">
+        
+        <div class="dairy-card" data-id="1" data-name="Milk" data-price="150">
+            <img src="assets/milk.jpeg" alt="Milk" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Milk</h3>
+                <p class="price">₹150/L</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="2" data-name="Cheese" data-price="375">
+            <img src="assets/cheese.jpeg" alt="Cheese" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Cheese</h3>
+                <p class="price">₹375/200g</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="3" data-name="Butter" data-price="225">
+            <img src="assets/butter.jpeg" alt="Butter" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Butter</h3>
+                <p class="price">₹225/250g</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="4" data-name="Cream" data-price="340">
+            <img src="assets/cream.jpeg" alt="Cream" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Cream</h3>
+                <p class="price">₹340/200ml</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="5" data-name="Yogurt" data-price="190">
+            <img src="assets/yogurt.jpeg" alt="Yogurt" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Yogurt</h3>
+                <p class="price">₹190/500g</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="6" data-name="Ice Cream" data-price="225">
+            <img src="assets/icecream.jpeg" alt="Ice Cream" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Ice Cream</h3>
+                <p class="price">₹225/100ml</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="7" data-name="Ghee" data-price="750">
+            <img src="assets/ghee.jpeg" alt="Ghee" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Ghee</h3>
+                <p class="price">₹750/500ml</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="8" data-name="Paneer" data-price="300">
+            <img src="assets/paneer.jpeg" alt="Paneer" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Paneer</h3>
+                <p class="price">₹300/200g</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="dairy-card" data-id="9" data-name="Condensed Milk" data-price="410">
+            <img src="assets/condensedmilk.jpeg" alt="Condensed Milk" class="dairy-image">
+            <div class="dairy-details">
+                <h3>Condensed Milk</h3>
+                <p class="price">₹410/can</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+    </div>
+  
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-about">
+        <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+        <p>
+          Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+          Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+        </p>
+      </div>
+  
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+          <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+      </div>
+  
+      
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+    <script src="dairy.js"></script>
+    <script src="nav.js"></script>
+   
+</body>
+
+</html>

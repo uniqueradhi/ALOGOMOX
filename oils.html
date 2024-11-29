@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oral Care Products - GrocyFlow</title>
+  <link rel="stylesheet" href="oils.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+</head>
+<body>
+  <header>
+    <div class="logo-name">
+      <a href="#" class="shop-name">GrocyFlow</a>
+  </div>
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="aboutUs.html">AboutUs</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><button id="theme-toggle-btn">
+              <i id="theme-icon" class="fa"></i>
+            </button>
+            </li>
+        </ul>  
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1>Explore Oil & Ghee Products</h1>
+    <div class="oil-ghee-grid">
+      
+      <div class="product-card" data-id="1" data-name="Mustard Oil" data-price="200">
+        <img src="assets/mustard-oil.jpg" alt="Mustard Oil" class="product-image">
+        <div class="product-details">
+          <h3>Mustard Oil</h3>
+          <p class="price">₹200/L</p>
+          <p class="total-price">Total: ₹<span class="total-amount">200</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="2" data-name="Coconut Oil" data-price="250">
+        <img src="assets/coconut-oil.jpg" alt="Coconut Oil" class="product-image">
+        <div class="product-details">
+          <h3>Coconut Oil</h3>
+          <p class="price">₹250/L</p>
+          <p class="total-price">Total: ₹<span class="total-amount">250</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="3" data-name="Olive Oil" data-price="800">
+        <img src="assets/olive-oil.jpg" alt="Olive Oil" class="product-image">
+        <div class="product-details">
+          <h3>Olive Oil</h3>
+          <p class="price">₹800/L</p>
+          <p class="total-price">Total: ₹<span class="total-amount">800</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="4" data-name="Groundnut Oil" data-price="220">
+        <img src="assets/groundnut-oil.jpg" alt="Groundnut Oil" class="product-image">
+        <div class="product-details">
+          <h3>Groundnut Oil</h3>
+          <p class="price">₹220/L</p>
+          <p class="total-price">Total: ₹<span class="total-amount">220</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="5" data-name="Cow Ghee" data-price="550">
+        <img src="assets/cow-ghee.jpg" alt="Cow Ghee" class="product-image">
+        <div class="product-details">
+          <h3>Cow Ghee</h3>
+          <p class="price">₹550/500g</p>
+          <p class="total-price">Total: ₹<span class="total-amount">550</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="6" data-name="Buffalo Ghee" data-price="500">
+        <img src="assets/buffallo-ghee.jpg" alt="Buffalo Ghee" class="product-image">
+        <div class="product-details">
+          <h3>Buffalo Ghee</h3>
+          <p class="price">₹500/500g</p>
+          <p class="total-price">Total: ₹<span class="total-amount">500</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="7" data-name="Organic Ghee" data-price="600">
+        <img src="assets/organic-ghee.jpeg" alt="Organic Ghee" class="product-image">
+        <div class="product-details">
+          <h3>Organic Ghee</h3>
+          <p class="price">₹600/500g</p>
+          <p class="total-price">Total: ₹<span class="total-amount">600</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="8" data-name="A2 Desi Ghee" data-price="1200">
+        <img src="assets/desi.jpeg" alt="A2 Desi Ghee" class="product-image">
+        <div class="product-details">
+          <h3>A2 Desi Ghee</h3>
+          <p class="price">₹1200/1kg</p>
+          <p class="total-price">Total: ₹<span class="total-amount">1200</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      
+      <div class="product-card" data-id="9" data-name="Sunflower Oil" data-price="180">
+        <img src="assets/sun-oil.jpeg" alt="Sunflower Oil" class="product-image">
+        <div class="product-details">
+          <h3>Sunflower Oil</h3>
+          <p class="price">₹180/L</p>
+          <p class="total-price">Total: ₹<span class="total-amount">180</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ 
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+      <p>
+        Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+        Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+      </p>
+    </div>
+
+    
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+        <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+  <script src="dairy.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

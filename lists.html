@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Grocery Shopping</title>
+  <link rel="stylesheet" href="lists.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="logo-name">
+        <a href="#" class="shop-name">GrocyFlow</a>
+    </div>
+      <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+      <nav class="navbar" id="navbar">
+          <ul class="nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="lists.html">Lists</a></li>
+              <li><a href="cart.html">Cart</a></li>
+              <li><a href="aboutUs.html">AboutUs</a></li>
+              <li><a href="help.html">Help</a></li>
+              <li><button id="theme-toggle-btn">
+                <i id="theme-icon" class="fa"></i>
+              </button>
+              </li>
+          </ul>  
+      </nav>
+    </header>
+    
+    <main>
+      <section id="lists">
+        <h2>Your Shopping Dashboard</h2>
+        <div class="budget-summary">
+          <div class="budget-section">
+            <label for="budget">Set Your Budget:</label>
+            <input type="number" id="budget" placeholder="Enter your budget" min="0">
+
+            <button class="set-budget-btn">Set Budget</button>
+
+          </div>
+          <div class="summary">
+            <h4>Total Spent: ₹<span id="total">0</span></h4>
+            <h4>Remaining Budget: ₹<span id="remaining-budget">0</span></h4>
+          </div>
+        </div>
+
+        <div class="search-container">
+          <input type="text" id="search-bar" placeholder="Search or add an item..." class="search-bar">
+          <button id="add-item-btn" class="add-item-btn">Add Item</button>
+          <ul id="suggestions" class="suggestions-list"></ul>
+        </div>
+
+        
+        <div id="shopping-list-container">
+          <h3>Categories</h3>
+          <div id="categories" class="grid-container">
+            
+            <div class="category-card" id="vegetables">
+              <img src="assets/veg.jpg" alt="Vegetables" class="category-icon">
+              <h4>Vegetables</h4>
+              <div class="items-container" id="vegetables-items"></div> 
+            </div>
+            <div class="category-card" id="fruits">
+              <img src="assets/fruits.jpeg" alt="Fruits" class="category-icon">
+              <h4>Fruits</h4>
+              <div class="items-container" id="fruits-items"></div> 
+            </div>
+            <div class="category-card" id="dairy">
+              <img src="assets/diary.jpeg" alt="Dairy" class="category-icon">
+              <h4>Dairy</h4>
+              <div class="items-container" id="dairy-items"></div> 
+            </div>
+            <div class="category-card" id="snacks">
+              <img src="assets/snacks.jpeg" alt="Snacks" class="category-icon">
+              <h4>Snacks</h4>
+              <div class="items-container" id="snacks-items"></div> 
+            </div>
+            <div class="category-card" id="spices">
+              <img src="assets/spices.jpeg" alt="Spices" class="category-icon">
+              <h4>Spices</h4>
+              <div class="items-container" id="spices-items"></div> 
+            </div>
+            <div class="category-card" id="dry-fruits">
+              <img src="assets/dryfruits.jpeg" alt="Dry Fruits" class="category-icon">
+              <h4>Dry Fruits</h4>
+              <div class="items-container" id="dry-fruits-items"></div> 
+            </div>
+            <div class="category-card" id="grains">
+              <img src="assets/grains.jpeg" alt="Grains" class="category-icon">
+              <h4>Grains</h4>
+              <div class="items-container" id="grains-items"></div> 
+            </div>
+            <div class="category-card" id="others">
+              <img src="assets/others.jpeg" alt="Others" class="category-icon">
+              <h4>Others</h4>
+              <div class="items-container" id="others-items"></div> 
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="finalize-btn-container">
+    <button class="finalize-btn" id="finalize-btn">Finalize List</button>
+  </div>
+
+   
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-about">
+        <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+        <p>
+          Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+          Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+        </p>
+      </div>
+  
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+          <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+      </div>
+  
+      
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    
+
+    function toggleTheme() {
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const themeIcon = document.getElementById('theme-icon');
+  const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+  if (currentTheme === 'light') {
+    document.body.classList.remove('light-theme');
+    document.body.classList.add('dark-theme');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+    localStorage.setItem('theme', 'dark'); 
+  } else {
+    document.body.classList.remove('dark-theme');
+    document.body.classList.add('light-theme');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+    localStorage.setItem('theme', 'light'); 
+  }
+}
+window.onload = function () {
+  const savedTheme = localStorage.getItem('theme');
+  const themeIcon = document.getElementById('theme-icon');
+
+  if (savedTheme) {
+    document.body.classList.add(savedTheme + '-theme');
+    if (savedTheme === 'dark') {
+      themeIcon.classList.add('fa-moon');
+    } else {
+      themeIcon.classList.add('fa-sun');
+    }
+  } else {
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (userPrefersDark) {
+      document.body.classList.add('dark-theme');
+      themeIcon.classList.add('fa-moon');
+    } else {
+      document.body.classList.add('light-theme');
+      themeIcon.classList.add('fa-sun');
+    }
+  }
+};
+document.getElementById('theme-toggle-btn').addEventListener('click', toggleTheme);
+
+
+  </script>
+  <script src="list.js"></script>
+  <script src="nav.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

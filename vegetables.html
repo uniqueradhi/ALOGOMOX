@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Vegetables - GrocyFlow</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+  <style>
+#theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; 
+  font-size: 24px;
+  color: inherit; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent!important;
+}
+
+#theme-icon {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+main {
+  padding: 20px;
+}
+
+
+h1,
+h2,
+h4 {
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #222;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+
+h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 12000px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+header {
+display: flex;
+justify-content: space-between; 
+align-items: center; 
+padding: 10px 20px; 
+
+background: linear-gradient(45deg, #32cd32, #228b22);
+color: white;
+margin: 0; 
+box-sizing: border-box; 
+}
+.shop-name,h1 {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+  animation: fadeIn 1s ease-out; 
+}
+
+
+.shop-name:hover,h1 {
+  color: #080808; 
+  animation: bounce 0.6s ease-out; 
+}
+
+body.dark-theme h1{
+  color:white;
+}
+
+.shop-name::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #32cd32, #101010);
+  transition: width 0.4s ease;
+}
+
+.shop-name:hover::after {
+  width: 100%; 
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+.hamburger-menu {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: 30px;
+height: 25px;
+cursor: pointer;
+z-index: 10;
+}
+
+.hamburger-menu span {
+display: block;
+height: 4px;
+background-color: white;
+border-radius: 4px;
+transition: all 0.3s ease;
+}
+.navbar {
+    justify-content: space-around; 
+    align-items: center;
+    background-color: transparent!important; 
+}
+
+
+.navbar {
+display: none;
+position: absolute;
+top: 60px;
+right: 20px;
+font-size: larger;
+width: 200px;
+padding: 10px;
+border-radius: 8px;
+z-index: 9;
+flex-direction: column;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .navbar{
+  background: linear-gradient(to right, #484848, #696969);
+}
+.navbar.show {
+display: flex;
+}
+
+
+.nav-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.nav-list li {
+margin: 10px 0;
+}
+
+.nav-list li a {
+text-decoration: none;
+color: white;
+font-weight: bold;
+display: block;
+padding: 10px;
+position: relative;
+transition: color 0.3s ease;
+}
+
+
+.nav-list li a:hover {
+color: rgb(4, 4, 4);
+animation: glowEffect 0.8s infinite alternate;
+}
+
+.nav-list li a::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+height: 3px;
+background-color: rgb(171, 205, 171);
+transition: width 0.3s ease;
+}
+
+body.drak-theme .nav-list li a::after{
+background: linear-gradient(to right, #484848, #696969);
+}
+
+.nav-list li a:hover::after {
+width: 100%;
+}
+
+
+.hamburger-menu.open span:nth-child(1) {
+transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.open span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger-menu.open span:nth-child(3) {
+transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 768px) {
+.navbar {
+background: linear-gradient(45deg, #32cd32, #228b22); 
+}
+
+.navbar.show {
+background: linear-gradient(45deg, #32cd32, #228b22);
+}
+}
+
+
+@media screen and (min-width: 769px) {
+.navbar {
+display: flex; 
+position: static; 
+width: auto;
+background: none; 
+padding: 0;
+box-shadow: none; 
+border-radius: 0; 
+}
+
+.nav-list {
+display: flex; 
+}
+
+.nav-list li {
+margin: 0 15px; 
+}
+
+.hamburger-menu {
+display: none; 
+}
+}
+
+
+@media screen and (max-width: 768px) {
+.hamburger-menu {
+display: flex; 
+}
+
+.navbar {
+display: none; 
+}
+
+.navbar.show {
+display: flex; 
+}
+
+.nav-list {
+flex-direction: column; 
+align-items: center; 
+}
+}
+
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(assets/bg\ \(2\).jpeg);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.3; 
+  z-index: -1; 
+}
+
+
+    .product-card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .product-details {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .product-details h3 {
+      font-size: 1.2rem;
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .product-details p {
+      margin: 5px 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .add-to-cart {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background-color: #218838;
+    }
+
+    .quantity-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      display: none;
+      
+    }
+
+    .quantity-controls button {
+      border: none;
+      background-color: #6ae888;
+      color: black;
+      font-size: 1.2rem;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .quantity-controls button:hover {
+      background-color: #4dda67;
+    }
+
+    .quantity-controls .quantity {
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .total-price {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    
+    .vegetable-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+
+
+    
+    .vegetable-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      
+      gap: 20px;
+      
+      padding: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .vegetable-grid {
+        grid-template-columns: repeat(3, 1fr);
+        
+      }
+    }
+
+    @media (max-width: 768px) {
+      .vegetable-grid {
+        grid-template-columns: repeat(2, 1fr);
+        
+      }
+    }
+
+    @media (max-width: 480px) {
+      .vegetable-grid {
+        grid-template-columns: 1fr;
+        
+      }
+    }
+
+    
+    .vegetable-card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .vegetable-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    
+    .vegetable-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 0;
+    }
+
+    
+    .vegetable-details {
+      margin: 10px;
+    }
+
+    .vegetable-details h3 {
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .vegetable-details p {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+      transition: color 0.3s;
+    }
+
+    .vegetable-card:hover .price {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      text-align: center;
+      padding: 10px 20px;
+    }
+#theme-toggle-btn {
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  border: none; 
+  background-color: #4caf50; 
+  color: white; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+
+#theme-toggle-btn:hover {
+  background-color: #388e3c;
+  background-color: transparent!important; 
+}
+
+
+
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(assets/bg\ \(2\).jpeg);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.3; 
+  z-index: -1; 
+}
+
+
+
+
+
+.custom-footer {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background-color: #529656;
+  text-align: center;
+ padding: 30px 20px;
+  overflow: hidden;
+}
+
+body.dark-theme .custom-footer{
+  background: linear-gradient(to right, #505050, #a0a0a0); 
+  
+}
+
+.footer-top {
+  background: linear-gradient(135deg,#00A300, #8ade8d);
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme{
+  color: #383737;
+}
+body.dark-theme .footer-top{
+  background: linear-gradient(to bottom, #4e4c4c, #C5C5C5);
+ 
+}
+.cta-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.cta-section p {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 0;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.footer-column h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #f4f3f0;
+}
+body.dark-theme .footer-column h4{
+  color:black;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #5cd55e;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #19e884;
+  transform: scale(1.2);
+}
+
+.footer-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #010a01;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-btn:hover {
+  background-color: #870a0a79;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+  }
+
+  .footer-column {
+      text-align: center;
+  }
+}
+
+.store-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box; 
+}
+
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.store-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.store-header .view-all {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.store-header .view-all:hover {
+  text-decoration: underline;
+}
+
+
+#theme-toggle-btn {
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  border: none; 
+  background-color: #4caf50; 
+  color: white; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+
+#theme-toggle-btn:hover {
+  background-color: #388e3c; 
+}
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-name">
+      <a href="#" class="shop-name">GrocyFlow</a>
+  </div>
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="aboutUs.html">AboutUs</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><button id="theme-toggle-btn">
+              <i id="theme-icon" class="fa"></i>
+            </button>
+            </li>
+        </ul>  
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Explore Fresh Vegetables</h1>
+    <div class="vegetable-grid">
+
+        
+        <div class="vegetable-card" data-id="1" data-name="Tomato" data-price="60">
+            <img src="assets/tomato.jpeg" alt="Tomato" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Tomato</h3>
+                <p class="price">₹60/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="2" data-name="Potato" data-price="45">
+            <img src="assets/potato.jpeg" alt="Potato" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Potato</h3>
+                <p class="price">₹45/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="3" data-name="Carrot" data-price="80">
+            <img src="assets/carrot.jpeg" alt="Carrot" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Carrot</h3>
+                <p class="price">₹80/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="4" data-name="Onion" data-price="40">
+            <img src="assets/onion.jpeg" alt="Onion" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Onion</h3>
+                <p class="price">₹40/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="5" data-name="Spinach" data-price="30">
+            <img src="assets/spinach.jpeg" alt="Spinach" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Spinach</h3>
+                <p class="price">₹30/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="6" data-name="Broccoli" data-price="100">
+            <img src="assets/brocoli.jpeg" alt="Broccoli" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Broccoli</h3>
+                <p class="price">₹100/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="7" data-name="Cauliflower" data-price="70">
+            <img src="assets/cauliflower.jpeg" alt="Cauliflower" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Cauliflower</h3>
+                <p class="price">₹70/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="8" data-name="Cabbage" data-price="50">
+            <img src="assets/cabbage.jpeg" alt="Cabbage" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Cabbage</h3>
+                <p class="price">₹50/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="9" data-name="Peas" data-price="90">
+            <img src="assets/peas.jpeg" alt="Peas" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Peas</h3>
+                <p class="price">₹90/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="10" data-name="Capsicum" data-price="85">
+            <img src="assets/capsicum.jpeg" alt="Capsicum" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Capsicum</h3>
+                <p class="price">₹85/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="11" data-name="Brinjal" data-price="55">
+            <img src="assets/brinjal.jpeg" alt="Brinjal" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Brinjal</h3>
+                <p class="price">₹55/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="12" data-name="Bitter Gourd" data-price="50">
+            <img src="assets/bitter-gourd.jpeg" alt="Bitter Gourd" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Bitter Gourd</h3>
+                <p class="price">₹50/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="13" data-name="Cucumber" data-price="35">
+            <img src="assets/cucumber.jpeg" alt="Cucumber" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Cucumber</h3>
+                <p class="price">₹35/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="14" data-name="Chilli" data-price="120">
+            <img src="assets/chili.jpeg" alt="Chilli" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Chilli</h3>
+                <p class="price">₹120/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="15" data-name="Pumpkin" data-price="60">
+            <img src="assets/pumpkin.jpeg" alt="Pumpkin" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Pumpkin</h3>
+                <p class="price">₹60/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+        
+        <div class="vegetable-card" data-id="16" data-name="Drumstick" data-price="150">
+            <img src="assets/drumstick.jpeg" alt="Drumstick" class="vegetable-image">
+            <div class="vegetable-details">
+                <h3>Drumstick</h3>
+                <p class="price">₹150/kg</p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+ 
+<footer class="footer">
+  <div class="footer-container">
+    
+    <div class="footer-about">
+      <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+      <p>
+        Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+        Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+      </p>
+    </div>
+
+    
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+        <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Similar Products Data (example mapping)
+const similarProducts = {
+    "Tomato": ["Capsicum", "Cabbage", "Carrot"],
+    "Potato": ["Onion", "Cabbage", "Spinach"],
+    "Carrot": ["Tomato", "Peas", "Capsicum"],
+    "Onion": ["Potato", "Cabbage", "Broccoli"],
+    "Spinach": ["Cabbage", "Bitter Gourd", "Drumstick"],
+    "Broccoli": ["Cauliflower", "Peas", "Capsicum"],
+    "Cauliflower": ["Broccoli", "Cabbage", "Peas"],
+    "Cabbage": ["Onion", "Spinach", "Tomato"],
+    "Peas": ["Carrot", "Capsicum", "Cauliflower"],
+    "Capsicum": ["Tomato", "Carrot", "Broccoli"],
+    "Brinjal": ["Bitter Gourd", "Cucumber", "Spinach"],
+    "Bitter Gourd": ["Spinach", "Cucumber", "Drumstick"],
+    "Cucumber": ["Bitter Gourd", "Pumpkin", "Drumstick"],
+    "Chilli": ["Capsicum", "Tomato", "Carrot"],
+    "Pumpkin": ["Cucumber", "Carrot", "Drumstick"],
+    "Drumstick": ["Spinach", "Bitter Gourd", "Pumpkin"]
+};
+
+// Function to handle "Add to Cart" button click
+document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", (event) => {
+        const card = event.target.closest(".vegetable-card");
+        const productName = card.getAttribute("data-name");
+
+        // Get similar products
+        const relatedProducts = similarProducts[productName] || [];
+        const message = relatedProducts.length > 0 
+            ? `You added ${productName} to your cart. You might also like: ${relatedProducts.join(", ")}.`
+            : `You added ${productName} to your cart.`;
+
+        // Announce the suggestions using AI voice
+        suggestWithVoice(message);
+    });
+});
+
+
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+recognition.start();
+recognition.onresult = function(event) {
+    let speechResult = event.results[0][0].transcript;
+    console.log(speechResult);
+};
+
+// Function to announce suggestions with AI voice
+function suggestWithVoice(text) {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    synth.speak(utterance);
+}
+
+</script>
+
+  <script src="dairy.js"></script>
+  <script src="nav.js"></script>
+
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrocyFlow</title>
+  <link rel="stylesheet" href="Masalas.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+</head>
+
+<body>
+    <header>
+        <div class="logo-name">
+          <a href="#" class="shop-name">GrocyFlow</a>
+      </div>
+        <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lists.html">Lists</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="aboutUs.html">AboutUs</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><button id="theme-toggle-btn">
+                  <i id="theme-icon" class="fa"></i>
+                </button>
+                </li>
+            </ul>  
+        </nav>
+      </header>
+
+  <div class="container">
+    <h1>Explore Fresh Masalas</h1>
+    <div class="masala-grid">
+        
+        <div class="masala-card" data-id="1" data-name="Turmeric" data-price="2.50">
+            <img src="assets/tumeric.jpeg" alt="Turmeric" class="masala-image">
+            <div class="masala-details">
+                <h3>Turmeric</h3>
+                <p class="price">₹250/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">250</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="2" data-name="Chili" data-price="1.80">
+            <img src="assets/chilipowder.jpeg" alt="Chili" class="masala-image">
+            <div class="masala-details">
+                <h3>Chili</h3>
+                <p class="price">₹180/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">180</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="3" data-name="Garam" data-price="3.00">
+            <img src="assets/garam.jpeg" alt="Garam" class="masala-image">
+            <div class="masala-details">
+                <h3>Garam</h3>
+                <p class="price">₹300/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">300</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="4" data-name="Chicken Fry" data-price="2.00">
+            <img src="assets/chicken.jpeg" alt="Chicken Fry" class="masala-image">
+            <div class="masala-details">
+                <h3>Chicken Fry</h3>
+                <p class="price">₹200/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">200</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="5" data-name="Mutton Fry" data-price="2.50">
+            <img src="assets/mutton.jpeg" alt="Mutton Fry" class="masala-image">
+            <div class="masala-details">
+                <h3>Mutton Fry</h3>
+                <p class="price">₹250/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">250</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="6" data-name="Fish Fry" data-price="3.50">
+            <img src="assets/fish.jpeg" alt="Fish Fry" class="masala-image">
+            <div class="masala-details">
+                <h3>Fish Fry</h3>
+                <p class="price">₹350/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">350</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="7" data-name="Coriander" data-price="1.60">
+            <img src="assets/coriander.jpeg" alt="Coriander" class="masala-image">
+            <div class="masala-details">
+                <h3>Coriander</h3>
+                <p class="price">₹160/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">160</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="8" data-name="Garam Masala" data-price="280">
+          <img src="assets/garam.jpeg" alt="Garam Masala" class="masala-image">
+          <div class="masala-details">
+              <h3>Garam Masala</h3>
+              <p class="price">₹280/100g</p>
+              <p class="total-price">Total: ₹<span class="total-amount">280</span></p>
+          </div>
+          <button class="add-to-cart">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+              <button class="decrease">-</button>
+              <span class="quantity">1</span>
+              <button class="increase">+</button>
+          </div>
+      </div>
+        
+        <div class="masala-card" data-id="9" data-name="Asafoetida" data-price="1.50">
+            <img src="assets/asafoetida.jpeg" alt="Asafoetida" class="masala-image">
+            <div class="masala-details">
+                <h3>Asafoetida</h3>
+                <p class="price">₹150/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">150</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="10" data-name="Black Pepper" data-price="2.20">
+            <img src="assets/blackpepper.jpeg" alt="Black Pepper" class="masala-image">
+            <div class="masala-details">
+                <h3>Black Pepper</h3>
+                <p class="price">₹220/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">220</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        
+        <div class="masala-card" data-id="11" data-name="Cumin" data-price="1.90">
+            <img src="assets/cumin.jpeg" alt="Cumin" class="masala-image">
+            <div class="masala-details">
+                <h3>Cumin</h3>
+                <p class="price">₹190/100g</p>
+                <p class="total-price">Total: ₹<span class="total-amount">190</span></p>
+            </div>
+            <button class="add-to-cart">Add to Cart</button>
+            <div class="quantity-controls" style="display: none;">
+                <button class="decrease">-</button>
+                <span class="quantity">1</span>
+                <button class="increase">+</button>
+            </div>
+        </div>
+        <div class="masala-card" data-id="14" data-name="Kasoori Methi" data-price="2.20">
+          <img src="assets/kasoorimethi.avif" alt="Kasoori Methi" class="masala-image">
+          <div class="masala-details">
+              <h3>Kasoori Methi</h3>
+              <p class="price">₹220/100g</p>
+              <p class="total-price">Total: ₹<span class="total-amount">220</span></p>
+          </div>
+          <button class="add-to-cart">Add to Cart</button>
+          <div class="quantity-controls" style="display: none;">
+              <button class="decrease">-</button>
+              <span class="quantity">1</span>
+              <button class="increase">+</button>
+          </div>
+      </div>
+      
+    </div>
+</div>
+ 
+<footer class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-about">
+        <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+        <p>
+          Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+          Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+        </p>
+      </div>
+  
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+          <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+      </div>
+  
+      
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+ <script src="dairy.js"></script>
+ <script src="nav.js"></script>
+</body>
+
+</html>

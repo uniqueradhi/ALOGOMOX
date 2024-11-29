@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamification</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <header>
+        <h1>🎉 Congratulations on Completing Your Order! 🎉</h1>
+    </header>
+
+    <main>
+        <div class="rewards-section">
+            <h2>Your Shopping Rewards</h2>
+            <p>You spent: ₹<span id="total-spent"></span></p>
+            <p>You earned: <strong><span id="reward-points"></span></strong> reward points!</p>
+            
+            <div class="badges">
+                <h3>Your Badges:</h3>
+                <div id="badge-container">
+                </div>
+            </div>
+
+            <button onclick="redirectToHome()">Continue Shopping</button>
+        </div>
+    </main>
+
+    
+
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-about">
+        <img src="assets/finallogo.jpg" alt="Grocy Flow Logo" class="footer-logo" />
+        <p>
+          Grocy Flow simplifies grocery shopping with smart solutions tailored to your lifestyle. <br>
+          Shop smarter, save time, and enjoy fresh groceries delivered to your doorstep.
+        </p>
+      </div>
+  
+      
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="aboutUS.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+          <li><a href=""><i class="fas fa-shopping-cart"></i> Shop</a></li>
+          <li><a href="help.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i> Contact Us</a></li>
+        </ul>
+      </div>
+  
+      
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:support@grocyflow.com">support@grocyflow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script>
+        
+        const totalSpent = parseFloat(localStorage.getItem("shoppingTotal")) || 0;
+        document.getElementById("total-spent").innerText = totalSpent.toFixed(2);
+
+        
+        const rewardPoints = Math.floor(totalSpent / 10);
+        document.getElementById("reward-points").innerText = rewardPoints;
+
+        
+        const badgeContainer = document.getElementById("badge-container");
+        const badges = [];
+
+        if (totalSpent > 1000) badges.push("Big Spender 🤑");
+        if (totalSpent <= 500) badges.push("Budget Shopper 💰");
+        if (totalSpent > 700 && totalSpent <= 1000) badges.push("Smart Shopper 🛍️");
+
+        badgeContainer.innerHTML = badges
+            .map(badge => `<span class="badge">${badge}</span>`)
+            .join("");
+
+        
+        function redirectToHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+<style>
+  body, h1, h2, h3, h4, p, button, span {
+      margin: 0;
+      padding: 0;
+  }
+
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+  }
+
+  header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+  }
+
+  header h1 {
+      font-size: 2rem;
+      font-weight: bold;
+  }
+
+  .rewards-section {
+      margin: 20px auto;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      width: 60%;
+      background-color: white;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .rewards-section h2 {
+      font-size: 1.5rem;
+      color: #333;
+  }
+
+  .rewards-section p {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #555;
+  }
+
+  .rewards-section strong {
+      font-size: 1.2rem;
+      color: #4CAF50;
+  }
+
+  .badges {
+      margin-top: 20px;
+  }
+
+  .badge {
+      display: inline-block;
+      margin: 5px;
+      padding: 10px 15px;
+      background-color: #f0ad4e;
+      color: white;
+      border-radius: 5px;
+      font-size: 1rem;
+  }
+
+  button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+      background-color: #218838;
+  }
+
+
+  @media (max-width: 768px) {
+      
+
+      .rewards-section {
+          width: 80%;
+      }
+  }
+
+  @media (max-width: 480px) {
+      header h1 {
+          font-size: 1.5rem;
+      }
+
+      .rewards-section h2 {
+          font-size: 1.2rem;
+      }
+
+      .badge {
+          font-size: 0.9rem;
+          padding: 8px 12px;
+      }
+
+      button {
+          font-size: 1rem;
+          padding: 10px 20px;
+      }
+  }
+</style>
+
+</body>
+</html>

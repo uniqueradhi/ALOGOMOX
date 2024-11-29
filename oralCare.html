@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oral Care Products - GrocyFlow</title>
+  <link rel="stylesheet" href="oralcare.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="footer.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+</head>
+<body>
+  <header>
+    <div class="logo-name">
+      <a href="#" class="shop-name">GrocyFlow</a>
+  </div>
+    <div class="hamburger-menu" id="hamburger-menu" onclick="toggleNavbar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lists.html">Lists</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="aboutUs.html">AboutUs</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><button id="theme-toggle-btn">
+              <i id="theme-icon" class="fa"></i>
+            </button>
+            </li>
+        </ul>  
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Explore Oral Care Products</h1>
+    <div class="oralcare-grid">
+      <!-- Oral Care 1 -->
+      <div class="oralcare-card" data-id="1" data-name="Toothpaste" data-price="1.50">
+        <img src="assets/toothpaste.jpg" alt="Toothpaste" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Toothpaste</h3>
+          <p class="price">$1.50/100g</p>
+          <p class="total-price">Total: $<span class="total-amount">1.50</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 2 -->
+      <div class="oralcare-card" data-id="2" data-name="Toothbrush" data-price="2.00">
+        <img src="assets/toothbrush.jpg" alt="Toothbrush" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Toothbrush</h3>
+          <p class="price">$2.00/each</p>
+          <p class="total-price">Total: $<span class="total-amount">2.00</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 3 -->
+      <div class="oralcare-card" data-id="3" data-name="Mouthwash" data-price="3.50">
+        <img src="assets/mouthwash.jpg" alt="Mouthwash" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Mouthwash</h3>
+          <p class="price">$3.50/250ml</p>
+          <p class="total-price">Total: $<span class="total-amount">3.50</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 4 -->
+      <div class="oralcare-card" data-id="4" data-name="Floss" data-price="1.20">
+        <img src="assets/floss.jpg" alt="Floss" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Floss</h3>
+          <p class="price">$1.20/50m</p>
+          <p class="total-price">Total: $<span class="total-amount">1.20</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 5 -->
+      <div class="oralcare-card" data-id="5" data-name="Teeth Whitening Kit" data-price="10.00">
+        <img src="assets/toothwhitening.jpg" alt="Teeth Whitening Kit" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Teeth Whitening Kit</h3>
+          <p class="price">$10.00/kit</p>
+          <p class="total-price">Total: $<span class="total-amount">10.00</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 6 -->
+      <div class="oralcare-card" data-id="6" data-name="Tooth Whitening Paste" data-price="5.50">
+        <img src="assets/kit.jpg" alt="Tooth Whitening Paste" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Tooth Whitening Paste</h3>
+          <p class="price">$5.50/100g</p>
+          <p class="total-price">Total: $<span class="total-amount">5.50</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 7 -->
+      <div class="oralcare-card" data-id="7" data-name="Electric Toothbrush" data-price="20.00">
+        <img src="assets/electric-brush.jpg" alt="Electric Toothbrush" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Electric Toothbrush</h3>
+          <p class="price">$20.00/each</p>
+          <p class="total-price">Total: $<span class="total-amount">20.00</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 8 -->
+      <div class="oralcare-card" data-id="8" data-name="Toothpaste with Charcoal" data-price="4.00">
+        <img src="assets/charcoal.jpg" alt="Toothpaste with Charcoal" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Toothpaste with Charcoal</h3>
+          <p class="price">$4.00/100g</p>
+          <p class="total-price">Total: $<span class="total-amount">4.00</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 9 -->
+      <div class="oralcare-card" data-id="9" data-name="Gum Care Gel" data-price="6.00">
+        <img src="assets/gum-care-gel.jpg" alt="Gum Care Gel" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Gum Care Gel</h3>
+          <p class="price">$6.00/100g</p>
+          <p class="total-price">Total: $<span class="total-amount">6.00</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 10 -->
+      <div class="oralcare-card" data-id="10" data-name="Plaque Remover" data-price="3.00">
+        <img src="assets/plaque.jpg" alt="Plaque Remover" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Plaque Remover</h3>
+          <p class="price">$3.00/each</p>
+          <p class="total-price">Total: $<span class="total-amount">3.00</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 11 -->
+      <div class="oralcare-card" data-id="11" data-name="Oral Irrigator" data-price="25.00">
+        <img src="assets/oral-irrigator.jpg" alt="Oral Irrigator" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Oral Irrigator</h3>
+          <p class="price">$25.00/each</p>
+          <p class="total-price">Total: $<span class="total-amount">25.00</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+      <!-- Oral Care 12 -->
+      <div class="oralcare-card" data-id="12" data-name="Whitening Strips" data-price="7.50">
+        <img src="assets/strip.jpg" alt="Whitening Strips" class="oralcare-image">
+        <div class="oralcare-details">
+          <h3>Whitening Strips</h3>
+          <p class="price">$7.50/box</p>
+          <p class="total-price">Total: $<span class="total-amount">7.50</span></p>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="quantity-controls" style="display: none;">
+          <button class="decrease">-</button>
+          <span class="quantity">1</span>
+          <button class="increase">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>About Us</h4>
+        <p>GrocyFlow is your one-stop solution for smart grocery shopping. Save time, money, and enjoy fresh groceries
+          delivered to your doorstep.</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: support@grocyflow.com</p>
+        <p>Phone: +1-234-567-890</p>
+        <p>Follow us:</p>
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 GrocyFlow. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="dairy.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>
